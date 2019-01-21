@@ -15,6 +15,12 @@ Review the materials below.
 Now we have a better grasp about the internet, and how some of the things are working. Now, let's answer a few questions to check our understanding. Don't be afraid to do additional research (googleing) for an answer. Fork this gist and answer the following questions:
 
 1. Describe, step by step, what happens when I type `www.example.com` into my browser and try to go to the page?
+  * The browser and operating system will determine if they know they the IP address already (configured on computer or in cache).
+  * The operating system then asks the resolving name server for any IP addresses it doesn't know. If it doesn't know where the IP address is, it will pass the query along to the Root name servers.
+  * The resolving name server will put the root information into it's cache and pass the query along to the Top Level Domain (TLD) servers. In this example it would be the com name servers.
+  * The resolving name server will put the TLD information into its cache and then be passed along to the correct Authoritative Name Server (ANS) with help from the Domain Registrar.
+  * The resolving name server then takes the IP address it gets from the ANS, puts it in cache and gives the reply back to the operating system.
+  * The operating system then gives it to the browser which makes the request to the correct IP address. 
  
 1.  What does HTTP stand for?
  * Hyper Text Transfer Protocol
